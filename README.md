@@ -45,7 +45,7 @@ The `identify` call has the following fields:
 | `userId` (Optional)       | String                  | The unique ID for the user.
 | `traits` (Optional)       | Object                  | A dictionary of traits you know about the user, like their email or name.
 
-By default, traits are cached in the browser’s local storage and attached to each subsequent identify call. For example, you might do that when someone signs up for a newsletter but hasn’t yet created an account on your site:
+By default, traits are cached in the browser’s local storage and added to each subsequent identify call.
 
 Example identify with hard-coded information:
 ```javascript
@@ -56,18 +56,9 @@ ENGAGE.identify({
 });
 ```
 
-and when the user completes signup:
-
-```javascript
-ENGAGE.identify('1506', {
-  name: 'Arjun Komath',
-  email: 'arjun.komath@diagnal.com'
-});
-```
-
 ### Track
 
-The `track` method lets you record any actions your users perform. You can see a track example in the guide or find details on the track method payload.
+The `track` method lets you record any actions your users perform.
 
 ```javascript
 ENGAGE.track(event, [properties]);
@@ -84,7 +75,7 @@ Example `track` call:
 
 ```javascript
 ENGAGE.track('play_content', {
-  content_title: 'How to Create a Tracking Plan',
+  content_title: 'Game of Thrones',
   content_id: 1234,
 });
 ```
