@@ -11,7 +11,7 @@ Include the Engage JS library file in your HTML head element and initialize the 
 ```html
 <script type="text/javascript" src="https://cdn.engage.diagnal.com/engage-core.js"></script>
 <script>
-ENGAGE.initialize("{client_id}", "{project_id}", {options});
+ENGAGE.initialize("{account_id}", "{project_id}", {options});
 </script>
 ```
 ### Options
@@ -51,8 +51,14 @@ Example identify with hard-coded information:
 ```javascript
 ENGAGE.identify({
   name: 'Arjun Komath',
+  gender: 'male',
+  age: 25,
+  status: 'registered',
+  city: 'TRIVANDRUM',
+  country: 'INDIA',
   email: 'arjun.komath@diagnal.com',
-  age: 25
+  network: 'Jio',
+  order_valid_till: '15-03-2017'
 });
 ```
 
