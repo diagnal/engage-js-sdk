@@ -58,7 +58,7 @@ ENGAGE.identify({
   country: 'INDIA',
   email: 'arjun.komath@diagnal.com',
   network: 'Jio',
-  order_valid_till: '15-03-2017'
+  order_valid_till: '2017-03-15'
 });
 ```
 
