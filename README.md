@@ -54,8 +54,6 @@ ENGAGE.identify({
   gender: 'male',
   age: 25,
   status: 'registered',
-  city: 'TRIVANDRUM',
-  country: 'INDIA',
   email: 'arjun.komath@diagnal.com',
   network: 'Jio',
   order_valid_till: '2017-03-15'
