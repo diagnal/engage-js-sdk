@@ -84,6 +84,28 @@ ENGAGE.track('play_content', {
 });
 ```
 
+### Using built-in events
+Engage SDK built-in Events gives you the ability to track events in your app that are most commonly used. For example, the content view event can be logged as follows:
+
+```javascript
+ENGAGE
+    .onContentView("series-7")
+    .putTitle("Game of thrones")
+    .putType("series")
+    .track();
+```
+**List of available build-in events:**
+
+| Method                      | Description
+| --------------------------- | -------------
+| `AdvertisementEventCreator` | Event creator for Advertisement playback events
+| `ContentEventCreator`       | Event creator for Media Content events
+| `DownloadEventCreator`      | Event creator for Content Download events
+| `PlayerEventCreator`        | Event creator for Media Playback events
+| `PurchaseEventCreator`      | Event creator for Purchase events
+| `SearchEventCreator`        | Event creator for Search events
+| `UserEventCreator`          | Event creator for User events
+
 ### Shutdown
 
 The `shutdown` method lets you to force stop tracking current user.
