@@ -6,12 +6,12 @@ It promotes content to users and access customer sentiment.
 
 Engage JavaScript SDK allows easy integration of Engage to you web application in a few steps.
 
-## Installation
+## Get Started
 Include the Engage JS library file in your HTML head element and initialize the SDK with your credentials.
 ```html
 <script type="text/javascript" src="https://cdn.engage.diagnal.com/engage-core.js"></script>
 <script>
-ENGAGE.initialize("{account_id}", "{project_id}", {options});
+ENGAGE.initialize(ACCOUNT_ID, PROJECT_ID, OPTIONS);
 </script>
 ```
 ### Options
