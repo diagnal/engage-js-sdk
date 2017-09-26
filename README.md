@@ -98,7 +98,7 @@ ENGAGE
 
 | Method                      | Description
 | --------------------------- | -------------
-| `AdvertisementEventCreator` | Event creator for Advertisement playback events
+| [`AdvertisementEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/AdvertisementEventCreator) | Event creator for Advertisement playback events
 | `ContentEventCreator`       | Event creator for Media Content events
 | `DownloadEventCreator`      | Event creator for Content Download events
 | `PlayerEventCreator`        | Event creator for Media Playback events
