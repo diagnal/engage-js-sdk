@@ -99,12 +99,12 @@ ENGAGE
 | Method                      | Description
 | --------------------------- | -------------
 | [`AdvertisementEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/AdvertisementEventCreator) | Event creator for Advertisement playback events
-| `ContentEventCreator`       | Event creator for Media Content events
-| `DownloadEventCreator`      | Event creator for Content Download events
-| `PlayerEventCreator`        | Event creator for Media Playback events
-| `PurchaseEventCreator`      | Event creator for Purchase events
-| `SearchEventCreator`        | Event creator for Search events
-| `UserEventCreator`          | Event creator for User events
+| [`ContentEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/ContentEventCreator)       | Event creator for Media Content events
+| [`DownloadEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/DownloadEventCreator)     | Event creator for Content Download events
+| [`PlayerEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/PlayerEventCreator)        | Event creator for Media Playback events
+| [`PurchaseEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/PurchaseEventCreator)      | Event creator for Purchase events
+| [`SearchEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/SearchEventCreator)        | Event creator for Search events
+| [`UserEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/UserEventCreator)          | Event creator for User events
 
 ### Shutdown
 
