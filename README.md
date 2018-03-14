@@ -113,3 +113,7 @@ The `shutdown` method lets you to force stop tracking current user.
 ```javascript
 ENGAGE.shutdown();
 ```
+
+## Sample Code
+
+You can find sample code in the [docs](https://github.com/diagnal/engage-js-sdk/tree/master/docs) folder.
