@@ -1,17 +1,49 @@
 class App extends React.Component {
-    componentDidMount() {
-        if (window.ENGAGE) {
-            /**
-             * Initialize ENGAGE SDK
-             *
-             * This is the first step and should be done while bootstraping the application
-             * Account ID and Project ID is passed while initializing, you can get the values
-             * from project settings in Engage Dashboard
-             */
-
-            ENGAGE.initialize("SJtAdOL5Z", "Bket0_OI9-");
+    constructor() {
+        super();
+        this.state = {
+            accountId: "",
+            projectId: ""
+        };
+        if (localStorage.getItem("state")) {
+            try {
+                this.state = JSON.parse(localStorage.getItem("state"));
+            } catch (e) {
+                console.error(e);
+            }
         }
     }
+
+    componentDidMount() {
+        if (!window.ENGAGE) {
+            console.error("Engage Core Library is missing");
+        }
+        if (this.state.accountId && this.state.projectId) {
+            ENGAGE.initialize(this.state.accountId, this.state.projectId);
+        }
+    }
+
+    onInputChange = (data, value) => {
+        let object = {};
+        object[data] = value;
+        this.setState(object);
+    };
+
+    initializeEngage = () => {
+        if (!this.state.accountId || !this.state.projectId) {
+            return alert("Please enter both account id and project id");
+        }
+        localStorage.setItem("state", JSON.stringify(this.state));
+
+        /**
+         * Initialize ENGAGE SDK
+         *
+         * This is the first step and should be done while bootstraping the application
+         * Account ID and Project ID is passed while initializing, you can get the values
+         * from project settings in Engage Dashboard
+         */
+        ENGAGE.initialize(this.state.accountId, this.state.projectId);
+    };
 
     trackAnonymousUser = () => {
         /**
@@ -136,11 +168,41 @@ class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <h2><b>DIAGNAL ENGAGE DEMO</b></h2>
+                <h2>
+                    <b>DIAGNAL ENGAGE DEMO</b>
+                </h2>
                 <hr />
                 <p>This is a sample single page application for demonstrating integration with DIAGNAL ENGAGE.</p>
 
-                <h4>Tracking User</h4>
+                <h4 style={{ marginTop: 40 }}>ENGAGE Configuration</h4>
+
+                <div className="row">
+                    <div className="col">
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="basic-addon1">
+                                    Account ID
+                                </span>
+                            </div>
+                            <input type="text" className="form-control" placeholder="Account ID" onChange={evt => this.onInputChange("accountId", evt.target.value)} value={this.state.accountId} />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="basic-addon1">
+                                    Project ID
+                                </span>
+                            </div>
+                            <input type="text" className="form-control" placeholder="Project ID" onChange={evt => this.onInputChange("projectId", evt.target.value)} value={this.state.projectId} />
+                        </div>
+                    </div>
+                </div>
+                <button className="btn btn-primary" onClick={this.initializeEngage}>
+                    Initialize Engage SDK
+                </button>
+
+                <h4 style={{ marginTop: 40 }}>Tracking User</h4>
                 <p>
                     Whenever user context changes via login, signup, logout etc, we use the identify method to pass the information to Engage.<br />
                     It is also possible to track an anonymous user via Engage.
