@@ -19,8 +19,7 @@ ENGAGE.initialize(ACCOUNT_ID, PROJECT_ID, OPTIONS);
 | Field           | Type                    | Description
 | --------------- | ----------------------- | -------------
 | `modules`       | Data collection modules | gtm, know
-| --------------- | ----------------------- | -------------
-| `VapidKey`      | Vapid Public Key        | Vapid Key for Web Push Support
+| `VapidKey`      | Public Key              | Vapid Key for Web Push Support
 
 ### Example
 
@@ -115,7 +114,7 @@ ENGAGE
 To Enable Web Push support for you web app, you need to add the engage-service-worker.js file at your project root and serve it as a static file so that it can be accessed directly like
 http://your-web-app.com/engage-service-worker.js 
 
-**Generate VAPID keys for Web Push API
+**Generate VAPID keys for Web Push API**
 
 You can install `web-push` node-js library globally and use it for generating VAPID keys.
 
