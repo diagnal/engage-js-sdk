@@ -19,12 +19,15 @@ ENGAGE.initialize(ACCOUNT_ID, PROJECT_ID, OPTIONS);
 | Field           | Type                    | Description
 | --------------- | ----------------------- | -------------
 | `modules`       | Data collection modules | gtm, know
+| --------------- | ----------------------- | -------------
+| `VapidKey`      | Vapid Public Key        | Vapid Key for Web Push Support
 
 ### Example
 
 ```javascript
 ENGAGE.initialize("8asdf643-f645-4dfb-a2se-sdfa33ac9f9e", "Ha45dfb9g", {
-          modules: ['gtm']
+          modules: ['gtm'],
+          VapidKey : 'BKCr4OrrMwVQz06amYXI-_EAcvZ3pt0Yb3NVJ2sAQPyFDbb-MCUMKJZp7aoOELi6QDTq57tBwMJZEdrH9go3dtE'
       });
 ```
 
@@ -105,6 +108,26 @@ ENGAGE
 | [`PurchaseEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/PurchaseEventCreator)      | Event creator for Purchase events
 | [`SearchEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/SearchEventCreator)        | Event creator for Search events
 | [`UserEventCreator`](https://github.com/diagnal/engage-js-sdk/wiki/UserEventCreator)          | Event creator for User events
+
+
+### Enabling Web Push
+
+To Enable Web Push support for you web app, you need to add the engage-service-worker.js file at your project root and serve it as a static file so that it can be accessed directly like
+http://your-web-app.com/engage-service-worker.js 
+
+**Generate VAPID keys for Web Push API
+
+You can install `web-push` node-js library globally and use it for generating VAPID keys.
+
+Install like so:
+
+    npm install web-push -g
+
+Then you can run the following commands:
+
+    Usage:
+
+      web-push generate-vapid-keys [--json]
 
 ### Shutdown
 
